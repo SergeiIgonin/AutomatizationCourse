@@ -1,0 +1,26 @@
+Структура проекта в соответствии с POM (состоит из трех сущностей):
+
+/pages:
+      • base_page.py    -содержит класс BasePage, общие локаторы для всех стр., иниц. общих объектов, общие методы
+      • login_page.py   -содержит класс LoginPage (насл. от BasePage) URL и локаторы тек. стр., иниц. объекта тек. стр. и методы стр.
+      • ...
+/tests:
+      • test_login_page.py  -содержит класс TestLoginPage, setup-метод по созд. объекта соотв. стр., тесты стр. (в j-х вызываем методы)
+      • ...
+conftest.py             -содержит общие фикстуры для стр.
+
+
+Плюсы использования POM:
+1. инкапсуляция бизнес-логики для быстрой правки локаторов и методов при необходимости.
+
+
+
+
+###########
+UI automatization UI project videos:
+Смотреть Окулика https://www.youtube.com/watch?v=xwWNCDau0u4
+Смотреть Коледачкина https://www.youtube.com/watch?v=qqGxKDOR2DY
+
+API automatization API project videos:
+Смотреть Окулика https://www.youtube.com/watch?v=_6ib59ddHnA&t=205s
+Смотреть Коледачкина https://www.youtube.com/watch?v=WrlmPjeGizU

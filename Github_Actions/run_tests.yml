@@ -1,0 +1,37 @@
+name: Automated tests
+
+on:                                           # условия запуска тестов на гитхабе
+  # push                                        # автозапуск тестов при каждом их пуше в репозиторий
+  workflow_dispatch:
+    inputs:
+      deployment_target:
+        description: Choose target
+        required: true
+        default:                              # здесь можно написать, какой из вариантов будет запускаться по умолчанию
+        type: choice
+        options:
+          - smoke_tests
+          - regular_tests
+
+
+jobs:                                         # задания (алгоритм запуска тестов)
+    tests:                                    # название джобы
+      runs-on: ubuntu-latest                  # на какой ОС запускать тесты
+
+      steps:
+        - name: Checkout repository           # название шага
+          uses: actions/checkout@v3           # название спец. заготовленного action-а
+        - name: Setup Python
+          uses: actions/setup-python@v4
+          with:
+            python version: "3.10"
+        - name: Install Chrome
+          run: sudo apt-get install google-chrome-stable
+        - name: Install dependensies
+          run: pip install -r requirements.txt
+        - name: smoke_tests
+          if: "github.event.inputs.deployment_target == 'smoke_tests'"
+          run: pytest -sv -m smoke
+        - name: regular_tests
+          if: "github.event.inputs.deployment_target == 'regular_tests'"
+          run: pytest -sv

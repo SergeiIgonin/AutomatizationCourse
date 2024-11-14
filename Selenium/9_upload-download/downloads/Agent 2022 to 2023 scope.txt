@@ -1,0 +1,38 @@
+**Scope of the 2022-2023 Plan**
+
+Slide 1: **Standalone Agent Development**
+
+- Objective: To focus on the independent development of the agent.
+
+Slide 2: **Selenium Plugin Framework Development**
+
+- Objective: Develop a comprehensive Selenium plugin framework with the following features:
+  1. Implementation of the point-and-shoot concept for learning screens and execution.
+  2. Implementation of data extraction capabilities.
+  3. Implementation of AutoLearning concept and execution.
+  4. Implementation of custom method execution concept.
+
+Slide 3: **Appium Plugin Framework Development**
+
+- Objective: Create an advanced Appium plugin framework with the following features:
+  1. Implementation of AutoLearning concept and execution.
+  2. Implementation of custom method execution concept.
+  3. Implementation of Bot actions execution in Tenjin 4.0.
+
+Slide 4: **API Plugin Framework Development**
+
+- Objective: Build a robust API plugin framework with the following functionalities:
+  1. Implementation of API execution capabilities.
+  2. Implementation of custom method execution concept.
+
+Slide 5: **Database Plugin Framework Development**
+
+- Objective: Develop a Database plugin framework with the following capabilities:
+  1. Implementation of Database learning and execution.
+  
+Slide 6: **Sahi Pro Plugin Framework Development**
+
+- Objective: Develop a Sahi Pro plugin framework with the following capabilities:
+  1. Implementation and Integration of Sahi Pro for learning and execution.
+  
+ 

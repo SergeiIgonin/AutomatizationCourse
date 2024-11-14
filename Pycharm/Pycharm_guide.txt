@@ -1,0 +1,13 @@
+Полезные команды и действия в Pycharm
+
+КАК УДАЛИТЬ ПРОЕКТ ИЗ PYCHARM:
+ File -> Close Project -> рядом с назв.проекта нажать три точки (Settings) -> Show in Explorer -> Удалить папку проекта
+-> Удалить сам проект (Remove from Recent Projects)
+
+КАК В GITHUB УДАЛИТЬ РЕПОЗИТОРИЙ:
+1. Перейти в нужный репозиторий
+2. В верхней панели нажать шестерню Settings
+3. Пролистать все настройки вниз до раздела Danger Zone
+4. Выбрать и нажать Delete this repository
+5. Ввести в поле Имя_аккаунта/Имя_проекта
+6. Подтвердить удаление и нажать "I understand, restore this repository"

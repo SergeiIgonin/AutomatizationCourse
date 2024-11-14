@@ -1,0 +1,9 @@
+Перейти на docker.com/products/docker-desktop , где скачать и установить на ПК Docker Desktop
+Включить виртуализацию в BIOS'е или одной из команд в powershell/cmd командой из под админа:
+• DISM/Online/Enable-Feature/All/FeatureName:Microsoft-Hyper-V
+• dism.exe /Online/Enable-Feature:Microsoft-Hyper-V/All
+и перезагрузить ПК. Гайд тут: https://learn.microsoft.com/ru-ru/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v
+Для проверки корректной работы Docker Desktop открыть powershell от имени админа и ввести команду>  docker run hello-world
+(если все Ок, то будет ответ "Hello from Docker!" и описание шагов которые перед этим совершил докер)
+31:56
+https://www.youtube.com/watch?v=GH6qT00magc

@@ -1,0 +1,78 @@
+ASSERT МЕТОДЫ.
+(https://habr.com/ru/companies/badoo/articles/419419/ - хорошая статья на тему составления правильных проверок)
+
+assert (element)                                            проверить присутствие элемента на странице (True, если локатор правильный)
+assert (element).is_displayed()                             проверить присутствие элемента на странице (True/False)
+(!) assert not (element).is_displayed()                     такая проверка не пройдет, нужно использовать методы из блока ниже
+assert (element).is_enabled()                               проверить что элемент включен (True/False)
+assert not (element).is_enabled()                           проверить что элемент отключен (True/False)
+assert (element).is_selected()                              проверить что элемент выбран (True/False)
+assert not (element).is_selected()                          проверить что элемент не выбран (True/False)
+assert (elementS).count() == 10                             проверить количество элементов (напр., кол-во товаров на стр.)
+assert (element).text == a/!= a/in a/not in a               проверить текст элемента
+assert len((element).text) > 10                             проверить длину текста элемента
+assert (element).get_attribute('{attrib_name}') == a/!= a   проверить имя атрибута элемента
+assert (element).get_attribute('value') == ''               проверить, что поле ввода после очистки стало пустым
+assert (element).get_location() == x,y/!= x,y               проверить изменение локации элемента (его верхнего левого угла) до и после
+assert (element).get_size() == x,y/!= x,y                   проверить изменение размера элемента (высоты и ширины) до и после
+assert (element).tag_name == a/!= a                         проверить тег элемента
+
+
+
+МЕТОДЫ BASEPAGE (вызываемые в проверочных методах PageObjects).
+from selenium.common.exceptions import NoSuchElementException       # для обработки исключения NoSuchElementException
+from selenium.common.exceptions import TimeoutException             # для обработки исключения TimeoutException
+from selenium.webdriver.support.ui import WebDriverWait             # для указания времени ожидания всех условий
+from selenium.webdriver.support import expected_conditions as EC    # дает нам список всех условий
+
+Метод проверки присутствия элемента на странице
+def is_element_present(self, method, locator):  # попробовать заменить на *args или, наоборот, у Окулика заменить *args на эти параметры
+    try:
+        self.driver.find_element(method, locator)
+    except NoSuchElementException:
+        return False
+    return True
+
+Метод проверки отсутствия элемента на странице (в течении заданного времени)
+def is_not_element_present(self, method, locator):
+    wait = WebDriverWait(self.driver, 4, 1)
+    try:
+        wait.until(EC.presence_of_element_located((method, locator)))   # попробовать заменить на *args
+    except TimeoutException:
+        return True
+    return False
+
+Метод проверки исчезновения элемента со страницы (т.е. когда изначально он есть, потом его нет)
+def is_element_disappeared(self, method, locator):
+    wait = WebDriverWait(self.driver, 4, 1)
+    try:
+        wait.until_not(EC.presence_of_element_located((method, locator)))   # попробовать заменить на *args
+    except TimeoutException:
+        return False
+    return True
+
+
+
+ЕЩЁ ПРИМЕРЫ ПРОВЕРОК:
+Проверка наличия общего текста у всех товаров из списка (напр., названия "iphone" для всех его моделей):
+for i in (elementS).get_text():
+    assert 'iphone' in i.lower(), f'Для товара {i} не указана марка'
+
+Проверка, что после вкл. сортировки цены по возрастанию товары действительно отфильтровались:
+all_prices = (elementS).get_text()
+assert all_prices == sorted(all_prices), 'Сортировка по возрастанию не работает'
+
+
+
+ВАРИАНТЫ СРАВНЕНИЙ И СОПОСТАВЛЕНИЙ:
+a == b
+a != b
+a > b
+type(5) is int
+type(5) is not int
+bool(a) == True
+bool(a) == False
+a is None
+a is not None
+a in b
+a not in b
