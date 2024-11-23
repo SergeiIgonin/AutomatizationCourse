@@ -1,4 +1,4 @@
-Полезные команды и действия в Pycharm
+Полезные команды и действия в Pycharm: https://www.youtube.com/watch?v=-TzZtXl3r3Q
 
 КАК УДАЛИТЬ ПРОЕКТ ИЗ PYCHARM:
  File -> Close Project -> рядом с назв.проекта нажать три точки (Settings) -> Show in Explorer -> Удалить папку проекта

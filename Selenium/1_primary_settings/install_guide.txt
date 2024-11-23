@@ -29,7 +29,7 @@
     > pip3 install packaging
 
 7.	Установить библиотеку webdriver-manager:
-    > pip3 install webdriver-manager
+    > pip3 install webdriver-manager    # он автоматически устанавливает/обновляет драйверы браузеров для успешного запуска тестов.
 
 8.  Создать файл.py и в нем инициализировать  Chrome драйвер (см. файл init driver.py)
 

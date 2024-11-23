@@ -49,10 +49,15 @@ my_number = 42.5
 print('Мой номер целочисленный' if type(my_number) is int else 'Мой номер не целочисленный')
 
 print('В тернарный оператор можно подставлять вызов функций')
+
+
 def gotoscool():
     print('Ребенок пошел в 1 класс')
+
+
 def stayhome():
     print('Ребенок остается дома')
+
 
 kid_age = 6
 gotoscool() if kid_age >= 7 else stayhome()
