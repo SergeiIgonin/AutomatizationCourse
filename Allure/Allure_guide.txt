@@ -17,7 +17,7 @@
 1. В терминале Pycharm ввести "pip install allure-pytest"
 2. Перейти во все файлы *_page.py / test_*.py и импортировать в них Allure (import allure)
 3. Декорировать в них все, что необходимо
-5. Ввести команду> "pytest -v --alluredir=report" для демонстрации отчета
+5. Ввести команду> "pytest --alluredir=report" для демонстрации отчета
    или: "pytest -v --alluredir results" - Для создания папки results в корне проекта
    (куда будут сохраняться наши Allure-отчеты в формате json)
 6. Ввести команду: "allure serve results" для запуска и просмотра отчета (на основе файлов в папке results)
