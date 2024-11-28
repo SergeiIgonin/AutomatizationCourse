@@ -32,8 +32,10 @@ import pytest
 
 
 '3. ФИКСАЦИЯ ВСЕХ УСТАНОВЛЕННЫХ ДЛЯ ТЕКУЩЕГО ВИРТ.ОКР. МОДУЛЕЙ В ФАЙЛ requirements.txt (после установки всех необходимых модулей)'
-'pip freeze > requirements.txt'    # создание файла requirements.txt и сохранение в него всех версиий пакетов используемых тек. окр.
-'pip install -r requirements.txt'  # установка всех пакетов в свежем вирт.окр. (после его создания) одной командой.
+# Предварительно выполнить установку основных пакетов, затем зафиксировать их в файле requirements.txt:
+'pip install selenium pytest webdriver-manager allure-pytest'
+'pip freeze > requirements.txt'    # фиксация всех версий установленных пакетов для тек. вирт. окр. в файл requirements.txt
+'pip install -r requirements.txt'  # быстрая распаковка и установка всех пакетов в свежем вирт. окр. (напр., в Docker контейнере)
 
 
 '4. ФИКСТУРЫ, ОПЕРАТОР YIELD, ОБЛАСТЬ ПОКРЫТИЯ SCOPE. АВТОИСПОЛЬЗОВАНИЕ ФИКСТУР'

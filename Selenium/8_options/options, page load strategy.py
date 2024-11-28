@@ -3,13 +3,15 @@
 import time
 from selenium import webdriver
 
-options = webdriver.ChromeOptions()    # (!) создание объекта для опций и их указание происходит ПЕРЕД инициализацией драйвера
+options = webdriver.ChromeOptions()  # (!) создание объекта для опций и их указание происходит ПЕРЕД инициализацией драйвера
 # from selenium.webdriver.chrome.options import Options - альтернативный способ инициализации объекта опций c импортом класса
 # options = Options()                                   - ..туда же вторым шагом
 
-options.add_argument('--window-size=1920,1080')        # задает размер окна браузера ((!) пробелы внутри скобок не допустимы)
-# options.page_load_strategy = 'eager'                 # ожидание загрузки только DOM (html-структуры) перед началом работы со стр.
-# options.add_argument('--headless')                   # запуск браузера в фоне (без GUI, напр. при исп. CI/CD)
+# options.page_load_strategy = 'eager'                 # ожидание загрузки только DOM (html-структуры) перед началом работы со страницей
+# options.add_argument('--window-size=1920,1080')      # задает размер окна браузера ((!) пробелы внутри скобок не допустимы)
+# options.add_argument('--headless=new')               # запуск браузера в фоне (без GUI, напр. при исп. CI/CD)
+# options.add_argument('--no-sandbox')                 # указывает на то, что у нас реальный проект, а не песочница
+# options.add_argument('--disable-dev-shm-usage')      # снимает лимит памяти в 64MB (shared memory) для Docker-контейнеров
 # options.add_argument('--disable-cache')              # откл. кэширования (все ресурсы на странице будут загружаться всегда)
 # options.add_argument('--incognito')                  # запуск браузера в режиме инкогнито (без сохранения данных)
 # options.add_argument('--ignore-certificate-errors')  # игнорирует ошибки сертификата SSL у защищенных HTTPS страниц
