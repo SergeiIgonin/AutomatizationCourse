@@ -1,7 +1,10 @@
 import allure
 from selenium import webdriver
+
 driver = webdriver.Chrome()
 
+
+# пример использования allur-декоратора внутри тестовой функции с маркировкой отдельных кусков кода в качестве степов
 @allure.story("Проверки присутствия элементов")
 def test_exist_add_to_cart_button():
     with allure.step("Открытие страницы товара"):
