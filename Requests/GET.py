@@ -31,13 +31,12 @@ print(response.request.headers)  # получить хэдер запроса
 
 'Стандартный GET-запрос'
 
-
-def test_get_object():  # пример готового теста (Прохождение теста зависит от цифры в pet_id, если ругается на 'id')
-    pet_id = 2
-    response1 = requests.get(f'https://petstore.swagger.io/v2/pet/{pet_id}')
-    assert response1.ok == True, "Статус-код 400 или выше"
-    response1_json = response1.json()
-    assert response1_json['id'] == pet_id, "Значение параметра из ответа сервера не совпадает с передаваемым"
+# def test_get_object():  # пример готового теста (Прохождение теста зависит от цифры в pet_id, если ругается на 'id')
+#     pet_id = 2
+#     response1 = requests.get(f'https://petstore.swagger.io/v2/pet/{pet_id}')
+#     assert response1.ok == True, "Статус-код 400 или выше"
+#     response1_json = response1.json()
+#     assert response1_json['id'] == pet_id, "Значение параметра из ответа сервера не совпадает с передаваемым"
 
 
 'Замена заголовка в хэдере GET-запроса'  # на примере передачи в хэдер юзер-агента
@@ -47,6 +46,8 @@ response = requests.get(
 )
 print(response.request.headers)  # заново получим хэдер запроса
 
+print("\n***\n")
+
 'GET-запрос c query-параметрами'
 response = requests.get(
     url="https://petstore.swagger.io/v2/pet/findByStatus",
@@ -54,6 +55,8 @@ response = requests.get(
     params={"status": "sold"}
 ).json()
 pprint.pprint(response)
+
+print("\n****\n")
 
 'Скачивание файла GET-запросом'
 img_url = "https://www.yaplakal.com/html/static/top-logo.png"
