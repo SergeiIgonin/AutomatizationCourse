@@ -23,7 +23,7 @@
      > pytest --alluredir=allure-results    (или pytest -v --alluredir allure-results)
 
 4.1. Сгенерировать отчет и запустить веб сервер для просмотра этого отчета:
-     > allure serve results    (затем остановить процесс в терминале по ctrl+C)
+     > allure serve allure-results    (затем остановить процесс в терминале по ctrl+C)
 
 5. Сгенерировать отчет локально в виде HTML-документа (на основе данных из папки "allure-results"):
      > allure generate allure-results --clean -o allure-report (ключ --clean очищает уже существующую папку allure-report, если она есть)

@@ -11,13 +11,14 @@
     Предварительно деактивировать имеющееся вирт. окружение (но лучше не трогать вирт. окр., если мы работаем в Pycharm):
     > deactivate
     Затем удалить его папку.
+
     Создать новое вирт. окружение и перейти в него:
-    > mkdir environments
-    > cd environments
-    > python3 -m venv selenium_env (имя можно дать любое, напр., просто venv)
-    > selenium_env
+    > mkdir venv
+    > cd venv
+    > python(3) -m venv venv
+
     Активировать созданное вирт. окружение:
-    > Scripts\activate (или Scripts\activate.ps1)
+    > venv\Scripts\activate (или venv\Scripts\activate.ps1) source/venv/bin/activate
     (!) ВАЖНО: команда selenium_env\Scripts\activate.bat работает только в командной строке.
     (!) ВАЖНО: окружение работает в рамках текущей сессии окна терминала, его нужно активировать каждый раз.
     Если мы закроем терминал или пайчарм, то окружение потом снова нужно будет активировать.
