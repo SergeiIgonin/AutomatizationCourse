@@ -19,8 +19,9 @@ conftest.py             -содержит общие фикстуры для с�
 ###########
 UI automatization UI project videos:
 Смотреть Окулика https://www.youtube.com/watch?v=xwWNCDau0u4
-Смотреть Коледачкина https://www.youtube.com/watch?v=qqGxKDOR2DY
+Смотреть Коледачкина https://www.youtube.com/watch?v=qqGxKDOR2DY (https://github.com/manikosto/LiveCoding)
 
 API automatization API project videos:
-Смотреть Окулика https://www.youtube.com/watch?v=_6ib59ddHnA&t=205s
-Смотреть Коледачкина https://www.youtube.com/watch?v=WrlmPjeGizU
+Смотреть Окулика основы https://www.youtube.com/watch?v=RYn3SPjnnqs
+Смотреть Окулика POM https://www.youtube.com/watch?v=_6ib59ddHnA&t=205s
+Смотреть Коледачкина https://www.youtube.com/watch?v=WrlmPjeGizU (https://github.com/manikosto/live-coding-api-webinar)
