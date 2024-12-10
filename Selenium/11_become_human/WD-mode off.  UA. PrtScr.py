@@ -2,6 +2,7 @@
 
 import time
 from selenium import webdriver
+
 options = webdriver.ChromeOptions()
 
 'Отключение режима "WebDriver-mode":'
@@ -14,4 +15,4 @@ driver.get('https://intoli.com/blog/not-possible-to-block-chrome-headless/chrome
 time.sleep(10)
 
 'Снятие скриншота'
-driver.save_screenshot("screen.png")    # в аргументе передаем путь сохранения и полное имя файла (иначе сохр. в текущей директории)
+driver.save_screenshot("screen.png")  # в параметр передаем путь сохранения и/или полное имя файла (иначе сохр. в текущей директории)
