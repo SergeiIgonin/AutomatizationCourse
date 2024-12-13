@@ -27,13 +27,13 @@ import pytest
 'pytest --tb=line'                            # Запуск теста с сокращенным логом отчета
 'pytest --language=en'                        # Запуск теста в англ. яз. версии браузера*
 'pytest --browser_name=firefox'               # Запуск теста в браузере firefox*
-# (*) см. ссылку по соответствующим настройкам в conftest.py: https://stepik.org/lesson/237240/step/7?unit=209628
+# (*) см. ссылку по соответствующим настройкам в conftest.txt: https://stepik.org/lesson/237240/step/7?unit=209628
 'pytest -m "smoke or regression" --tb=line --browser_name=firefox PyTest\tests\test_3_marks.py.py::test_1' # пример составной команды
 
 
-'3. ФИКСАЦИЯ ВСЕХ УСТАНОВЛЕННЫХ ДЛЯ ТЕКУЩЕГО ВИРТ.ОКР. МОДУЛЕЙ В ФАЙЛ requirements.txt (после установки всех необходимых модулей)'
-# Предварительно выполнить установку основных пакетов, затем зафиксировать их в файле requirements.txt:
-'pip install selenium pytest webdriver-manager allure-pytest'
+'3. ФИКСАЦИЯ ВСЕХ УСТАНОВЛЕННЫХ МОДУЛЕЙ ДЛЯ ТЕКУЩЕГО ВИРТ.ОКР. В ФАЙЛ requirements.txt (после установки всех необходимых модулей)'
+# Предварительно выполнить установку основных пакетов, затем зафиксировать их в файл requirements.txt:
+'pip install selenium pytest webdriver-manager allure-pytest faker'
 'pip freeze > requirements.txt'    # фиксация всех версий установленных пакетов для тек. вирт. окр. в файл requirements.txt
 'pip install -r requirements.txt'  # быстрая распаковка и установка всех пакетов в свежем вирт. окр. (напр., в Docker контейнере)
 
@@ -79,9 +79,9 @@ def separator():
 # Или же warnings можно отключить в терминале командой --disable-warnings (не рекомендуется)
 
 
-'6. СОХРАНЕНИЕ ВСЕХ ФИКСТУР В ФАЙЛ conftest.py'
-# (!) Создать файл conftest.py параллельно папке tests и поместить в него все необходимые фикстуры.
-# (*) Ссылка с инфой о том, что нужно прописать в conftest.py чтобы можно было запускать все тесты только в хроме или только
+'6. СОХРАНЕНИЕ ВСЕХ ФИКСТУР В ФАЙЛ conftest.txt'
+# (!) Создать файл conftest.txt параллельно папке tests и поместить в него все необходимые фикстуры.
+# (*) Ссылка с инфой о том, что нужно прописать в conftest.txt чтобы можно было запускать все тесты только в хроме или только
 # в файрфоксе, в разных языковых версиях сайта, с указанием названия браузера и/или языка в самой команде pytest:
 # https://stepik.org/lesson/237240/step/7?unit=209628
 
