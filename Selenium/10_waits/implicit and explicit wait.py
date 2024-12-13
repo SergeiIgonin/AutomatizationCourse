@@ -17,7 +17,7 @@ wait = WebDriverWait(driver, 10)  # создание объекта ожидан
 
 driver.get('URL')
 element_locator = ("xpath", "//tag[@attribute='value']")
-wait.until(EC.УСЛОВИЕ(element_locator)), 'Кастомный текс ошибки'  # Настроенное ожидание условия (распаковщик "*" уже встроен)
+wait.until(EC.УСЛОВИЕ(element_locator)), 'Кастомный текс ошибки'  # Настроенное ожидание условия (распаковщик "*" здесь уже встроен)
 driver.find_element(*element_locator).click()  # здесь распаковщик нужен
 
 'Основные условия:'
@@ -26,3 +26,5 @@ driver.find_element(*element_locator).click()  # здесь распаковщи
 # invisibility_of_element_located(LOCATOR)      - ожидание невидимости элемента или его исчезновения из DOM.
 # text_to_be_present_in_element(LOCATOR, text)  - ожидание наличия нужного текста в элементе.
 # element_attribute_to_include(LOCATOR, value)  - ожидание появления нового атрибута у элемента
+# -------------------------------------------------------------
+# Список условий: https://www.selenium.dev/selenium/docs/api/py/webdriver_support/selenium.webdriver.support.expected_conditions.html

@@ -31,7 +31,7 @@ from selenium.webdriver.support.ui import WebDriverWait             # для у�
 from selenium.webdriver.support import expected_conditions as EC    # дает нам список всех условий
 
 Метод проверки присутствия элемента на странице
-def is_element_present(self, method, locator):  # попробовать заменить на *args или, наоборот, у Окулика заменить *args на эти параметры
+def is_element_present(self, method, locator):
     try:
         self.driver.find_element(method, locator)
     except NoSuchElementException:
@@ -42,19 +42,20 @@ def is_element_present(self, method, locator):  # попробовать зам�
 def is_not_element_present(self, method, locator):
     wait = WebDriverWait(self.driver, 4, 1)
     try:
-        wait.until(EC.presence_of_element_located((method, locator)))   # попробовать заменить на *args
+        wait.until(EC.presence_of_element_located((method, locator)))
     except TimeoutException:
         return True
     return False
 
 Метод проверки исчезновения элемента со страницы (т.е. когда изначально он есть, потом его нет)
-def is_element_disappeared(self, method, locator):
+def is_disappeared(self, method, locator):
     wait = WebDriverWait(self.driver, 4, 1)
     try:
-        wait.until_not(EC.presence_of_element_located((method, locator)))   # попробовать заменить на *args
+        wait(TimeoutException).until_not(EC.presence_of_element_located((method, locator)))
     except TimeoutException:
         return False
     return True
+(!) после wait в скобках указываем игнорируемое исключение, т.к. по умолчанию там содержится только NoSuchElementException
 
 
 
