@@ -35,3 +35,10 @@ jobs: # задания (алгоритм запуска тестов)
       - name: regular_tests
         if: "github.event.inputs.deployment_target == 'regular_tests'"
         run: pytest -sv
+
+# можно реализовать поочередный запуск тестов в одном worlflow:
+#  if: *флоу_1*
+#  run: pytest -sv --browser_name=crome
+#  if: *флоу_1*
+#  run: pytest -sv --browser_name=firefox
+# и т.д.
