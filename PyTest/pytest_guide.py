@@ -26,9 +26,8 @@ import pytest
 'pytest tests\test_3_marks.py::test_1'        # Запуск указанного теста из указанного файла
 'pytest --tb=line'                            # Запуск теста с сокращенным логом отчета
 'pytest --language=en'                        # Запуск теста в англ. яз. версии браузера*
-'pytest --browser_name=firefox'               # Запуск теста в браузере firefox*
-# (*) см. ссылку по соответствующим настройкам в conftest.txt: https://stepik.org/lesson/237240/step/7?unit=209628
-'pytest -m "smoke or regression" --tb=line --browser_name=firefox PyTest\tests\test_3_marks.py.py::test_1' # пример составной команды
+'pytest --browser_name=firefox'               # Запуск теста в браузере firefox (или chrome — предварительно настроить в conftest.py )
+'pytest -m "smoke or regression" --browser_name=firefox PyTest\tests\test_3_marks.py.py::test_1' # пример составной команды
 
 
 '3. ФИКСАЦИЯ ВСЕХ УСТАНОВЛЕННЫХ МОДУЛЕЙ ДЛЯ ТЕКУЩЕГО ВИРТ.ОКР. В ФАЙЛ requirements.txt (после установки всех необходимых модулей)'
